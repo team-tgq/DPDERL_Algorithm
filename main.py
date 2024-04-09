@@ -2,7 +2,6 @@ import math
 
 import numpy as np
 import dem_data
-import judge_with_true
 from linked_line import LinkedLinePDE
 from partition_algorithm import PartitionAlgorithm
 from partition_optimal_reference_lineal_gorithm import PartitionOptimalRLAlgorithm

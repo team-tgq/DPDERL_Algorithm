@@ -98,11 +98,11 @@ def analysis_accuracy_repeat(dem, min_lon, max_lat, max_lon, min_lat, h, limit):
         print(
             f"第{count}次测试:\ndem.file_path:{dem.file_path}\nlon:{lon}\nlat:{lat}\nh_center:{h_center}\nh:{h}\nstart_angle:{start_angle}\nend_angle:{end_angle}\nr:{r}")
         # SPDERL
-        result_spderl, actually_count = analysis_by_spderl_simplified(lon, lat, h_center, r_distance, h,
-                                                                      start_angle,
+        result_spderl, actually_count,_ = analysis_by_spderl_simplified(lon, lat, h_center, r_distance, h,
+                                                                       start_angle,
                                                                       end_angle, dem)
         file_name = f"Spderl_{terrain_type_dict[dem.file_path]}_{lon}_{lat}.tif"
-        x_grid_observe, y_grid_observe, x_grid_center, y_grid_center, a, b = dem.get_point_location(lon, lat)
+        x_grid_observe, y_grid_observe, x_grid_center, y_grid_center, a, b, _ = dem.get_point_location(lon, lat)
 
         # generate_viewable_raster(result_spderl, lon, lat, r_distance, h,
         #                          start_angle,
