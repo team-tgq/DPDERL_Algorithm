@@ -1,5 +1,5 @@
 # 项目名称
-本研究提出一种分区策略实现任意视场角所形成可视区域均可采用SPDERL算法进行可视性分析且解决分区策略所引起边缘点、搜索冗余等问题，并通过优化构建初始参考线避免观察点位于网格点时出现大量误差，最终将视频监控物理特性视场角与PDERL算法通过分区策略结合实现视频监控的快速近似视域分析。本研究算法为视频监控等需分析范围根据物理特性动态变化的设备，在视域分析领域中实现了速度与精度之间的有效平衡，同时对于需要快速响应且对精度有较高要求的视域分析场景有重要的参考价值。
+本研究提出一种分区策略实现任意视场角所形成可视区域均可采用DPDERL算法进行可视性分析且解决分区策略所引起边缘点、搜索冗余等问题，并通过优化构建初始参考线避免观察点位于网格点时出现大量误差，最终将视频监控物理特性视场角与PDERL算法通过分区策略结合实现视频监控的快速近似视域分析。本研究算法为视频监控等需分析范围根据物理特性动态变化的设备，在视域分析领域中实现了速度与精度之间的有效平衡，同时对于需要快速响应且对精度有较高要求的视域分析场景有重要的参考价值。
 ###### **安装步骤**
 ```sh
 git clone https://github.com/shaojintian/Best_README_template.git
@@ -27,7 +27,7 @@ filetree
 ## 代码简介
 
 ### 主程序
-在main.py下包含了本研究算法SPDERL、XPDERL、PDERL、XDraw、R3算法主体框架及对输入的参数数据预处理方法。
+在main.py下包含了本研究算法DPDERL、XPDERL、PDERL、XDraw、R3算法主体框架及对输入的参数数据预处理方法。
 ### SPDERL算法具体实现 
 在partition_optimal_reference_lineal_gorithm.py中包含一个SPDERL算法的实现类，其中定义了算法所需要的参数(视场角、视距、视域半径等)及针对不同视场角所采取不同分区策略对应算法的具体实现。
 ### 速度测试（论文原标题：speed）
@@ -37,7 +37,7 @@ filetree
 ### 整体精度测试（论文原标题：Overall Accuracy）
 运行comparison_accuracy.py即可测试以R3算法为基准SPDERL算法的整体误差率。
 ### 误差点聚合（论文原标题：Aggregation of error points）
-运行aggregation_of_error_points.py即可测试以PDERL算法为基准SPDERL算法、XPDERL算法、XDraw算法的聚合点误差程度。
+运行aggregation_of_error_points.py即可测试以PDERL算法为基准DPDERL算法、XPDERL算法、XDraw算法的聚合点误差程度。
 ### 数据
 在/data/文件目录下包含了本研究所用的所有DSM数据
 ### 输出文件
