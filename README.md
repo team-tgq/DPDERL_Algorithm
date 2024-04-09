@@ -28,14 +28,14 @@ filetree
 
 ### 主程序
 在main.py下包含了本研究算法DPDERL、XPDERL、PDERL、XDraw、R3算法主体框架及对输入的参数数据预处理方法。
-### SPDERL算法具体实现 
-在partition_optimal_reference_lineal_gorithm.py中包含一个SPDERL算法的实现类，其中定义了算法所需要的参数(视场角、视距、视域半径等)及针对不同视场角所采取不同分区策略对应算法的具体实现。
+### DPDERL算法具体实现 
+在partition_optimal_reference_lineal_gorithm.py中包含一个DPDERL算法的实现类，其中定义了算法所需要的参数(视场角、视距、视域半径等)及针对不同视场角所采取不同分区策略对应算法的具体实现。
 ### 速度测试（论文原标题：speed）
-运行comparison_speed.py即可测试随机参数SPDERL算法与XDraw算法在山区、丘陵、平原地形下的耗时，并生成相应的csv文件。
+运行comparison_speed.py即可测试随机参数DPDERL算法与XDraw算法在山区、丘陵、平原地形下的耗时，并生成相应的csv文件。
 ### 精度对比测试（论文原标题：Accuracy Comparison Experiment）
-运行comparison_optrl_with_peder.py即可测试当观察点位于网格点时SPDERL算法与PDERL算法在山区、丘陵、平原地形下的误差值，并生成相应的csv文件。
+运行comparison_optrl_with_peder.py即可测试当观察点位于网格点时DPDERL算法与PDERL算法在山区、丘陵、平原地形下的误差值，并生成相应的csv文件。
 ### 整体精度测试（论文原标题：Overall Accuracy）
-运行comparison_accuracy.py即可测试以R3算法为基准SPDERL算法的整体误差率。
+运行comparison_accuracy.py即可测试以R3算法为基准DPDERL算法的整体误差率。
 ### 误差点聚合（论文原标题：Aggregation of error points）
 运行aggregation_of_error_points.py即可测试以PDERL算法为基准DPDERL算法、XPDERL算法、XDraw算法的聚合点误差程度。
 ### 数据
