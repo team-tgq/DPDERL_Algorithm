@@ -5,7 +5,7 @@ from datetime import datetime
 import numpy as np
 
 import dem_data
-from main import analysis_by_spderl_simplified, analysis_by_r3, judge_is_out_bound
+from main import analysis_by_dpderl_simplified, analysis_by_r3, judge_is_out_bound
 
 data = []
 terrain_type_dict = {
@@ -63,7 +63,7 @@ def analysis_accuracy_repeat(dem, i):
     #     i = 10
     print(
         f"第{i + 1}次测试:\ndem.file_path:{dem.file_path}\nlon:{lon}\nlat:{lat}\nh_center:{h_center}\nh:{i}\nstart_angle:{start_angle}\nend_angle:{end_angle}\nr:{r_distance}")
-    result_spderl, actually_count, result_opt_rl_spderl = analysis_by_spderl_simplified(lon, lat, h_center,
+    result_spderl, actually_count, result_opt_rl_spderl = analysis_by_dpderl_simplified(lon, lat, h_center,
                                                                                         r_distance, i,
                                                                                         start_angle,
                                                                                         end_angle, dem)

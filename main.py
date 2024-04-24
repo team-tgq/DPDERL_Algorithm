@@ -905,11 +905,6 @@ def analysis_by_pderl(x_center, y_center, h_center, to_x, to_y, h_stand):
 
     # print("最终结果:\n", result)
 
-    # 比较与原算法结果是否有异
-    true_result = judge_with_true.get_true_result()
-    # print("是否相同：\n", judge_with_true.are_arrays_equal(result, true_result))
-
-
 def analysis_by_pderl_with_angle(x_center, y_center, h_center, radius, h_stand, horizontal_start_angle,
                                  horizontal_end_angle, current_dem=dem):
     # 初始化
@@ -2096,8 +2091,6 @@ def analysis_by_xpderl(x_center, y_center, h_center, to_x, to_y, h_stand):
         end_y_index += 1
     # print("右面：\n", result)
 
-    true_result = judge_with_true.get_true_result()
-    # print("右面是否相同：\n", judge_with_true.are_arrays_equal(result, true_result))
     # 上半面及下半面->横向格网间距实地距离的倒数 用它来计算线段系数a
     u = 1 / (dem.dx * dem.rdx)
 
@@ -2334,9 +2327,6 @@ def analysis_by_xpderl(x_center, y_center, h_center, to_x, to_y, h_stand):
     # true_result = judge_with_true.get_true_result()
     # print("是否相同：\n", judge_with_true.are_arrays_equal(result, true_result))
 
-    true_result = judge_with_true.get_true_result()
-    # print("上面是否相同：\n", judge_with_true.are_arrays_equal(result, true_result))
-
     u = 1 / (dem.dy * dem.rdy)
 
     # 左半面
@@ -2554,9 +2544,6 @@ def analysis_by_xpderl(x_center, y_center, h_center, to_x, to_y, h_stand):
         x_distance_index -= 1
     # print("左面：\n", result)
 
-    # 比较与原算法结果是否有异
-    true_result = judge_with_true.get_true_result()
-    # print("左面是否相同：\n", judge_with_true.are_arrays_equal(result, true_result))
     # 上半面及下半面->横向格网间距实地距离的倒数 用它来计算线段系数a
     u = 1 / (dem.dx * dem.rdx)
 
@@ -2781,8 +2768,6 @@ def analysis_by_xpderl(x_center, y_center, h_center, to_x, to_y, h_stand):
 
     # print("最终结果:\n", result)
 
-    # 比较与原算法结果是否有异
-    true_result = judge_with_true.get_true_result()
     # print("最终是否相同：\n", judge_with_true.are_arrays_equal(result, true_result))
     return result
 
@@ -3100,8 +3085,6 @@ def analysis_by_xpderl_with_angle(x_center, y_center, h_center, radius, h_stand,
         end_y_index += 1
     # print("右面：\n", result)
 
-    true_result = judge_with_true.get_true_result()
-    # print("右面是否相同：\n", judge_with_true.are_arrays_equal(result, true_result))
     # 上半面及下半面->横向格网间距实地距离的倒数 用它来计算线段系数a
     u = 1 / (dem.dx * dem.rdx)
 
@@ -3338,13 +3321,6 @@ def analysis_by_xpderl_with_angle(x_center, y_center, h_center, radius, h_stand,
         y_distance_index += 1
     # print("上面：\n", result)
 
-    # 比较与原算法结果是否有异
-    # true_result = judge_with_true.get_true_result()
-    # print("是否相同：\n", judge_with_true.are_arrays_equal(result, true_result))
-
-    true_result = judge_with_true.get_true_result()
-    # print("上面是否相同：\n", judge_with_true.are_arrays_equal(result, true_result))
-
     u = 1 / (dem.dy * dem.rdy)
 
     # 左半面
@@ -3572,9 +3548,6 @@ def analysis_by_xpderl_with_angle(x_center, y_center, h_center, radius, h_stand,
         x_distance_index -= 1
     # print("左面：\n", result)
 
-    # 比较与原算法结果是否有异
-    true_result = judge_with_true.get_true_result()
-    # print("左面是否相同：\n", judge_with_true.are_arrays_equal(result, true_result))
     # 上半面及下半面->横向格网间距实地距离的倒数 用它来计算线段系数a
     u = 1 / (dem.dx * dem.rdx)
 
@@ -3803,10 +3776,6 @@ def analysis_by_xpderl_with_angle(x_center, y_center, h_center, radius, h_stand,
         y_distance_index -= 1
 
     # print("最终结果:\n", result)
-
-    # 比较与原算法结果是否有异
-    true_result = judge_with_true.get_true_result()
-    # print("最终是否相同：\n", judge_with_true.are_arrays_equal(result, true_result))
     return result
 
 
@@ -3818,7 +3787,7 @@ horizontal_end_angle： 水平扫描截至角度0-360
 """
 
 
-def analysis_by_spderl_simplified(x_center, y_center, h_center, radius, h_stand, horizontal_start_angle=0.0,
+def analysis_by_dpderl_simplified(x_center, y_center, h_center, radius, h_stand, horizontal_start_angle=0.0,
                                   horizontal_end_angle=360.0, current_dem=dem):
     global dem
     dem = current_dem

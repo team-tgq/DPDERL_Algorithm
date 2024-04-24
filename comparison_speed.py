@@ -2,7 +2,7 @@ import csv
 import random
 from datetime import datetime
 import dem_data
-from main import analysis_by_spderl_simplified, analysis_by_r3, analysis_by_xdraw
+from main import analysis_by_dpderl_simplified, analysis_by_r3, analysis_by_xdraw
 
 data = []
 
@@ -48,7 +48,7 @@ def analysis_speed_repeat(dem, r, h, limit):
             f"第{count + 1}次测试:\ndem.file_path:{dem.file_path}\nlon:{lon}\nlat:{lat}\nh_center:{h_center}\nh:{h}\nstart_angle:{start_angle}\nend_angle:{end_angle}\n")
         # 获取观察点底部高程值
         # SPDERL
-        analysis_by_spderl_simplified(lon, lat, h_center, r, h,
+        analysis_by_dpderl_simplified(lon, lat, h_center, r, h,
                                       start_angle,
                                       end_angle, dem)
         spderl_time = datetime.now() - date

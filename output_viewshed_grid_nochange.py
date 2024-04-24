@@ -1,7 +1,7 @@
 import numpy as np
 from osgeo import gdal, osr
 import shapefile
-from main import analysis_by_spderl_simplified
+from main import analysis_by_dpderl_simplified
 
 
 def generate_viewable_raster_nochange(visibility_array, lon, lat, r_distance, h, start_angle, end_angle, dem_path,

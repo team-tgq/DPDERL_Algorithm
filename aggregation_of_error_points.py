@@ -6,7 +6,7 @@ import random
 import numpy as np
 
 import dem_data
-from main import analysis_by_spderl_simplified, analysis_by_pderl_with_angle, analysis_by_xdraw, \
+from main import analysis_by_dpderl_simplified, analysis_by_pderl_with_angle, analysis_by_xdraw, \
     analysis_by_xpderl_with_angle
 
 data = []
@@ -47,7 +47,7 @@ def analysis_get_neighbor_error_with_pderl(r, h, max_count, dem):
         lat = start_lat + radom * (max_lat - start_lat)
         h_center = dem.height[int((lon - dem.start_x) / dem.dx)][int((lat - dem.start_y) / dem.dy)]
         print(f"result_our_{h}_{count}:\n{lon} {lat} {h_center} {r * dem.rdx} {h} {start_angle} {end_angle}")
-        _, _, result_our = analysis_by_spderl_simplified(lon, lat, h_center, r * dem.rdx, h, start_angle, end_angle,
+        _, _, result_our = analysis_by_dpderl_simplified(lon, lat, h_center, r * dem.rdx, h, start_angle, end_angle,
                                                          dem)
         result_pderl = analysis_by_pderl_with_angle(lon, lat, h_center, r * dem.rdx, h, start_angle, end_angle, dem)
         result_xdraw = analysis_by_xdraw(lon, lat, h_center, r * dem.rdx, h, start_angle, end_angle, dem)

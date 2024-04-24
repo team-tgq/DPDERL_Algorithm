@@ -3,7 +3,7 @@ from datetime import datetime
 import numpy as np
 
 import dem_data
-from main import analysis_by_r3, analysis_by_spderl_simplified, get_initial_param_spderl, \
+from main import analysis_by_r3, analysis_by_dpderl_simplified, get_initial_param_spderl, \
     get_start_loc, judge_is_out_bound
 import random
 
@@ -27,7 +27,7 @@ def comparison_with_r3(x_center, y_center, h_center, radius, h_stand, horizontal
     print(
         f"第{cnt}次测试:\nhorizontal_start_angle:{horizontal_start_angle}\nhorizontal_end_angle:{horizontal_end_angle}\n")
 
-    result_spderl, count, result_opt_rl_spderl = analysis_by_spderl_simplified(x_center, y_center, h_center, radius,
+    result_spderl, count, result_opt_rl_spderl = analysis_by_dpderl_simplified(x_center, y_center, h_center, radius,
                                                                                h_stand,
                                                                                horizontal_start_angle,
                                                                                horizontal_end_angle, dem)
@@ -82,7 +82,7 @@ horizontal_end_angle = 326.4852929095307
 
 
 def visualization():
-    result_spderl, count, result_opt_rl_spderl = analysis_by_spderl_simplified(x_center, y_center, h_center, radius,
+    result_spderl, count, result_opt_rl_spderl = analysis_by_dpderl_simplified(x_center, y_center, h_center, radius,
                                                                                h_stand,
                                                                                horizontal_start_angle,
                                                                                horizontal_end_angle, dem)
