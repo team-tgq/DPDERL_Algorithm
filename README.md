@@ -24,7 +24,7 @@ To assess the aggregation of error points for the DPDERL, XPDERL, and XDraw algo
 ### data
 The /data/ directory contains all the Digital Surface Model (DSM) data utilized in this study.
 ### output
-The /output/grid directory contains the raster data generated from examples used for defect analysis. The /output/shape directory stores the shapefile data generated from examples used for defect analysis. Additionally, the /output/ directory includes the CSV files corresponding to tests conducted in various experiments.\
+The /output/grid directory contains the raster data generated from examples used for defect analysis. The /output/shape directory stores the shapefile data generated from examples used for defect analysis. Additionally, the /output/ directory includes the CSV files corresponding to tests conducted in various experiments.
 
 ---
 
